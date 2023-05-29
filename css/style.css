@@ -32,6 +32,10 @@
     padding: var(--size-md);
 }
 
+.py-2 {
+    padding: var(--size-sm);
+}
+
 .py-3 {
     padding: var(--size-md) 0rem;
 }
@@ -114,6 +118,8 @@ select {
     padding: 5px;
     border-radius: 8px;
     border-color: var(--primary-color);
+    font-size: 18px;
+    font-weight: 600;
 }
 
 button {
