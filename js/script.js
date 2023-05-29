@@ -15,6 +15,8 @@ const discount_perc = document.getElementById('discount-perc');
 const discount_display = document.getElementById('discount-display');
 const ticket_display = document.getElementById('ticket-display');
 const ticket_gross = document.getElementById('ticket-gross');
+const carriageDisplay = document.getElementById('carriage-display');
+const ticketNumber = document.getElementById('ticket-num-display');
 
 // Declare calc variables
 let discount;
@@ -80,6 +82,19 @@ calcButton.addEventListener('click', function () {
             console.log("Il prezzo del biglietto è di €" + ticketNet.toFixed(2));
         }
 
+        // Random calc for ticket ID & train carriage
+        const random = Math.random();
+        const ticketNumMin = 20000;
+        const ticketNumMax = 50000;
+        const carriageMax = 6;
+
+        const carriageAssign = Math.floor(random * carriageMax) + 1;
+
+        const ticketNumAssign = Math.floor(random * (ticketNumMax - ticketNumMin) + ticketNumMin);
+
+
+
+
         // Display results in DOM
         km_display.innerText = km;
         age_display.innerText = age;
@@ -87,6 +102,8 @@ calcButton.addEventListener('click', function () {
         ticket_gross.innerText = ticket.toFixed(2);
         discount_display.innerText = (ticket - ticketNet).toFixed(2);
         ticket_display.innerText = ticketNet.toFixed(2);
+        carriageDisplay.innerText = carriageAssign;
+        ticketNumber.innerText = ticketNumAssign;
     }
 })
 
