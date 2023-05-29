@@ -38,5 +38,12 @@ calcButton.addEventListener('click', function () {
         console.log("Sei vecio!, hai uno sconto del " + discount + "%!");
     }
     console.log(discount);
+
+    // Declare Ticket & Ticket_net
+    let ticket = (km * costXkm);
+    console.log(ticket.toFixed(2));
+
+    let ticketNet;
+
 })
 
