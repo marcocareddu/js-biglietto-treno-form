@@ -4,3 +4,49 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Utils */
+.container {
+    max-width: 1000px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.col-3 {
+    width: calc(100% / 12) * 3;
+}
+
+.col-4 {
+    width: calc(100% / 12) * 4;
+}
+
+/* Body */
+body {
+    background: blueviolet;
+}
+
+h1 {
+    color: white;
+}
+
+/* Main */
+main {
+    text-align: center;
+}
+
+/* Input Section */
+.input-section .card {
+    background-color: white;
+    color: blueviolet;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Ticket Section */
+.ticket-section .card {
+    background-color: white;
+}
