@@ -8,6 +8,13 @@ const km_amount = document.getElementById('km');
 const calcButton = document.getElementById('calc-btn');
 const eraseButton = document.getElementById('erase-btn');
 const ageInput = document.getElementById('age-select');
+// Bonus
+const km_display = document.getElementById('km-display');
+const age_display = document.getElementById('age-display');
+const discount_perc = document.getElementById('discount-perc');
+const discount_display = document.getElementById('discount-display');
+const ticket_display = document.getElementById('ticket-display');
+const ticket_gross = document.getElementById('ticket-gross');
 
 // Declare calc variables
 let discount;
@@ -72,6 +79,14 @@ calcButton.addEventListener('click', function () {
             ticketNet = ticket - ((ticket * discount) / 100);
             console.log("Il prezzo del biglietto è di €" + ticketNet.toFixed(2));
         }
+
+        // Display results in DOM
+        km_display.innerText = km;
+        age_display.innerText = age;
+        discount_perc.innerText = discount;
+        ticket_gross.innerText = ticket.toFixed(2);
+        discount_display.innerText = (ticket - ticketNet).toFixed(2);
+        ticket_display.innerText = ticketNet.toFixed(2);
     }
 })
 
