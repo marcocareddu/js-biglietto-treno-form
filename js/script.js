@@ -17,6 +17,7 @@ const ticketDisplay = document.getElementById('ticket-display');
 const ticketGross = document.getElementById('ticket-gross');
 const carriageDisplay = document.getElementById('carriage-display');
 const ticketNumber = document.getElementById('ticket-num-display');
+const passengerName = document.getElementById('passenger-name');
 
 // Declare calc variables
 let discount;
@@ -92,9 +93,6 @@ calcButton.addEventListener('click', function () {
 
         const ticketNumAssign = Math.floor(random * (ticketNumMax - ticketNumMin) + ticketNumMin);
 
-
-
-
         // Display results in DOM
         kmDisplay.innerText = km;
         ageDisplay.innerText = age;
@@ -104,6 +102,7 @@ calcButton.addEventListener('click', function () {
         ticketDisplay.innerText = ticketNet.toFixed(2);
         carriageDisplay.innerText = carriageAssign;
         ticketNumber.innerText = ticketNumAssign;
+        passengerName.innerText = name;
     }
 })
 
