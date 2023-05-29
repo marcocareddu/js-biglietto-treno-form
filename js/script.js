@@ -24,40 +24,55 @@ calcButton.addEventListener('click', function () {
     const age = ageInput.value;
     console.log(name, km, age);
 
-    // Discount Access
-    if ((age !== 'under18') && (age !== 'over65')) {
-        discount = 0;
-        console.log("Non hai diritto allo sconto");
+    // !Validation
+    let isValid = true;
 
-    } else if (age === 'under18') {
-        discount = 20;
-        console.log("Sei ggggiovane, hai uno sconto del " + discount + "%!");
-
-    } else {
-        discount = 40;
-        console.log("Sei vecio!, hai uno sconto del " + discount + "%!");
+    if ((km < 1 || km === false) || (age === 'empty') || (name === '')) {
+        isValid = false;
+        console.log(name, km, age);
+        console.log("Non stai inserendo un valore corretto!");
+        alert("Controlla di aver inserito i dati richiesti!");
     }
+    console.log(isValid);
 
-    console.log(discount);
+    if (isValid) {
 
-    // Declare Ticket & Ticket_net
-    let ticket = (km * costXkm);
-    console.log(ticket.toFixed(2));
+        // Discount Access
+        if ((age !== 'under18') && (age !== 'over65')) {
+            discount = 0;
+            console.log("Mi spiace " + name + ", non hai diritto allo sconto");
 
-    let ticketNet;
+        } else if (age === 'under18') {
+            discount = 20;
+            console.log("Congratulazioni " + name + "! Sei giovane, hai uno sconto del " + discount + "%!");
 
-    // Ticket discounted calc
-    if (discount === 0) {
-        console.log("Il prezzo del biglietto è di €" + ticket.toFixed(2));
-        ticketNet = ticket;
+        } else {
+            discount = 40;
+            console.log("Congratulazioni " + name + "! Sei vecio!, hai uno sconto del " + discount + "%!");
+        }
 
-    } else if (discount === 20) {
-        ticketNet = ticket - ((ticket * discount) / 100);
-        console.log("Il prezzo del biglietto è di €" + ticketNet.toFixed(2));
+        console.log(discount);
 
-    } else {
-        ticketNet = ticket - ((ticket * discount) / 100);
-        console.log("Il prezzo del biglietto è di €" + ticketNet.toFixed(2));
+        // Declare Ticket & Ticket_net
+        let ticket = (km * costXkm);
+        console.log(ticket.toFixed(2));
+
+        let ticketNet;
+
+        // Ticket discounted calc
+        if (discount === 0) {
+            console.log("Il prezzo del biglietto è di €" + ticket.toFixed(2));
+            ticketNet = ticket;
+
+        } else if (discount === 20) {
+            ticketNet = ticket - ((ticket * discount) / 100);
+            console.log("Il prezzo del biglietto è di €" + ticketNet.toFixed(2));
+
+        } else {
+            ticketNet = ticket - ((ticket * discount) / 100);
+            console.log("Il prezzo del biglietto è di €" + ticketNet.toFixed(2));
+        }
     }
 })
+
 
