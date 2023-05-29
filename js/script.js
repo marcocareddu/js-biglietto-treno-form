@@ -35,9 +35,6 @@ calcButton.addEventListener('click', function () {
     const age = ageInput.value;
     console.log(name, km, age);
 
-    // Display ticket
-    ticketSection.classList.remove('d-none');
-
     // !Validation
     let isValid = true;
 
@@ -107,6 +104,9 @@ calcButton.addEventListener('click', function () {
         carriageDisplay.innerText = carriageAssign;
         ticketNumber.innerText = ticketNumAssign;
         passengerName.innerText = name;
+
+        // Display ticket
+        ticketSection.classList.remove('d-none');
     }
 })
 

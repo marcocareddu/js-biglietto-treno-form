@@ -8,6 +8,11 @@
     <meta name="author" content="Class #100">
     <meta name="keywords" content="JS, ticket, train, javascript">
     <link rel="icon" href="./img/icon.png" type="image/png">
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./css/style.css" type="text/css">
     <title>Train ticket 3000 - Reloaded</title>
 </head>
@@ -16,10 +21,11 @@
     <!-- Main -->
     <main>
         <div class="container">
+
             <!-- Input Section -->
             <section class="input-section py-3">
-                <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
-                <div class="card py-3">
+                <h1 class="py-3">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+                <div class="card py-3 shadow">
                     <div class="row">
                         <div class="col-3 py-3">
                             <label for="name">Nome e Cognome</label>
@@ -50,10 +56,12 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Ticket section  -->
             <section class="ticket-section py-3 d-none" id="ticket-block">
                 <h1>IL TUO BIGLIETTO</h1>
                 <div class="ticket">
-                    <div class="card p-3">
+                    <div class="card p-3 shadow">
                         <h2>DETTAGLIO PASSEGGERI</h2>
                         <div class="passenger">
                             <div class="row border">
@@ -62,22 +70,22 @@
                                     <h3 id="passenger-name">Nome</h3>
                                 </div>
 
-                                <div class="col-4 p-2 flex-column-between">
+                                <div class="col-5 p-2 flex-column-between">
                                     <h2>Offerta</h2>
                                     <p>Biglietto <span id="age-display"></span></p>
                                 </div>
 
-                                <div class="col-4 p-2 flex-column-between">
+                                <div class="col-5 p-2 flex-column-between">
                                     <h2>Carrozza</h2>
                                     <p id="carriage-display"></p>
                                 </div>
 
-                                <div class="col-4 p-2 flex-column-between">
+                                <div class="col-5 p-2 flex-column-between">
                                     <h2>Codice CP</h2>
                                     <p id="ticket-num-display"></p>
                                 </div>
 
-                                <div class="col-4 p-2 flex-column-between">
+                                <div class="col-5 p-2 flex-column-between">
                                     <h2>Costo Biglietto</h2>
                                     <p>€<span id="ticket-display"></span></p>
                                 </div>

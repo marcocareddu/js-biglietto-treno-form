@@ -7,8 +7,9 @@
 
 /* CUSTOM PROPERTIES */
 :root {
-    --primary-color: blueviolet;
-    --secondary-color: gray;
+    --primary-color: #b91450;
+    --secondary-color: #808080;
+    --tertiary-color: lightgray;
     --size-sm: 0.8rem;
     --size-md: 1rem;
 }
@@ -35,6 +36,10 @@
     padding: var(--size-md) 0rem;
 }
 
+.shadow {
+    box-shadow: 7px 15px 20px rgba(0, 0, 0, 0.5)
+}
+
 .row {
     display: flex;
     align-items: center;
@@ -51,8 +56,8 @@
     height: 100px;
 }
 
-.col-4 {
-    width: calc((100% / 12) * 3);
+.col-5 {
+    width: calc((100% / 12) * 5);
     height: 100px;
 }
 
@@ -69,6 +74,7 @@ p {
 /* Body */
 body {
     background: var(--primary-color);
+    font-family: 'Montserrat', sans-serif;
 }
 
 h1 {
@@ -99,12 +105,39 @@ main>div {
     text-align: center;
 }
 
+label {
+    font-weight: 600;
+}
+
+input,
+select {
+    padding: 5px;
+    border-radius: 8px;
+    border-color: var(--primary-color);
+}
+
+button {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: 600;
+    background-color: var(--tertiary-color);
+}
+
+select:focus,
+button:focus {
+    border: 2px solid orange;
+}
+
 /* Ticket Section */
 .ticket-section .card {
     background-color: white;
 }
 
-.ticket h2 {
+.ticket h2,
+.ticket h3 {
     text-align: left;
 }
 
