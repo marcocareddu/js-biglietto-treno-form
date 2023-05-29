@@ -18,7 +18,7 @@
         <div class="container">
 
             <!-- Input Section -->
-            <section class="Input Section">
+            <section class="input-section">
                 <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
                 <div class="card">
                     <div class="row">
@@ -54,24 +54,39 @@
             <section class="ticket-section">
                 <h1>IL TUO BIGLIETTO</h1>
                 <div class="ticket">
-                    <h2>DETTAGLIO PASSEGGERI</h2>
-                    <div class="passenger">
-                        <h2>NOME PASSEGGERO</h2>
-                        <h3 id="passenger-name"></h3>
+                    <div class="card">
+                        <h2>DETTAGLIO PASSEGGERI</h2>
+                        <div class="passenger">
+                            <div class="row">
+                                <div class="col-3">
+                                    <h2>NOME PASSEGGERO</h2>
+                                    <h3 id="passenger-name">Nome</h3>
+                                </div>
+
+                                <div class="col-4">
+                                    <h2>Offerta</h2>
+                                    <h2>Biglietto <span id="age-display"></span></h2>
+                                </div>
+
+                                <div class="col-4">
+                                    <h2>Carrozza</h2>
+                                    <h2 id="carriage-display"></h2>
+                                </div>
+
+                                <div class="col-4">
+                                    <h2>Codice CP</h2>
+                                    <h2 id="ticket-num-display"></h2>
+                                </div>
+
+                                <div class="col-4">
+                                    <h2>Costo Biglietto</h2>
+                                    <h2 id="ticket-display"></h2>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-
             </section>
-            <p>Vuoi percorrere <span id="km-display"></span> km</p>
-            <p>Sei in classe <span id="age-display"></span></p>
-            <p>quindi hai uno sconto del <span id="discount-perc"></span>%</p>
-            <p>che equivale ad €<span id="discount-display"></span> sul
-                biglietto da €
-                <span id="ticket-gross"></span>
-            <p>Il costo totale del biglietto è di €<span id="ticket-display"></span>
-            <p>Il numero della carrozza è <span id="carriage-display"></span>
-            <p>Il numero del tuo biglietto è <span id="ticket-num-display"></span>
         </div>
     </main>
 
