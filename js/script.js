@@ -110,4 +110,9 @@ calcButton.addEventListener('click', function () {
     }
 })
 
-
+// Erase Button
+eraseButton.addEventListener('click', function () {
+    nameInput.value = '';
+    kmAmount.value = '';
+    ageInput.value = 'empty';
+})
