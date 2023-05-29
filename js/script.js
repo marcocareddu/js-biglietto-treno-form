@@ -17,5 +17,12 @@ const costXkm = 0.21;
 
 console.log(under18, senior, discount, costXkm);
 
+// # PHASE 2
 
-
+// User Input
+calcButton.addEventListener('click', function () {
+    const name = nameInput.value.trim();
+    const km = km_amount.value;
+    const age = ageInput.value;
+    console.log(name, km, age);
+})
