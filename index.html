@@ -16,23 +16,22 @@
     <!-- Main -->
     <main>
         <div class="container">
-
             <!-- Input Section -->
-            <section class="input-section">
+            <section class="input-section py-3">
                 <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
-                <div class="card">
+                <div class="card py-3">
                     <div class="row">
-                        <div class="col-3">
+                        <div class="col-3 py-3">
                             <label for="name">Nome e Cognome</label>
                             <br>
                             <input type="text" id="name">
                         </div>
-                        <div class="col-3">
+                        <div class="col-3 py-3">
                             <label for="km">Km da percorrere?</label>
                             <br>
                             <input type="number" id="km">
                         </div>
-                        <div class="col-3">
+                        <div class="col-3 py-3">
                             <label for="age-select">Fascia d'età</label>
                             <br>
                             <select name="age" id="age-select">
@@ -45,42 +44,42 @@
                     </div>
 
                     <!-- Button -->
-                    <div>
+                    <div class="py-3">
                         <button id="calc-btn">Calcola</button>
                         <button id="erase-btn">Cancella</button>
                     </div>
                 </div>
             </section>
-            <section class="ticket-section">
+            <section class="ticket-section py-3">
                 <h1>IL TUO BIGLIETTO</h1>
                 <div class="ticket">
-                    <div class="card">
+                    <div class="card p-3">
                         <h2>DETTAGLIO PASSEGGERI</h2>
                         <div class="passenger">
-                            <div class="row">
-                                <div class="col-3">
+                            <div class="row border">
+                                <div class="ticket-head p-2">
                                     <h2>NOME PASSEGGERO</h2>
                                     <h3 id="passenger-name">Nome</h3>
                                 </div>
 
-                                <div class="col-4">
+                                <div class="col-4 p-2 flex-column-between">
                                     <h2>Offerta</h2>
-                                    <h2>Biglietto <span id="age-display"></span></h2>
+                                    <p>Biglietto <span id="age-display"></span></p>
                                 </div>
 
-                                <div class="col-4">
+                                <div class="col-4 p-2 flex-column-between">
                                     <h2>Carrozza</h2>
-                                    <h2 id="carriage-display"></h2>
+                                    <p id="carriage-display"></p>
                                 </div>
 
-                                <div class="col-4">
+                                <div class="col-4 p-2 flex-column-between">
                                     <h2>Codice CP</h2>
-                                    <h2 id="ticket-num-display"></h2>
+                                    <p id="ticket-num-display"></p>
                                 </div>
 
-                                <div class="col-4">
+                                <div class="col-4 p-2 flex-column-between">
                                     <h2>Costo Biglietto</h2>
-                                    <h2 id="ticket-display"></h2>
+                                    <p>€<span id="ticket-display"></span></p>
                                 </div>
                             </div>
                         </div>
