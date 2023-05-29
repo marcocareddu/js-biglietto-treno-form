@@ -10,12 +10,10 @@ const eraseButton = document.getElementById('erase-btn');
 const ageInput = document.getElementById('age-select');
 
 // Declare calc variables
-const under18 = 19;
-const senior = 64;
 let discount;
 const costXkm = 0.21;
 
-console.log(under18, senior, discount, costXkm);
+console.log(discount, costXkm);
 
 // # PHASE 2
 
@@ -25,4 +23,20 @@ calcButton.addEventListener('click', function () {
     const km = km_amount.value;
     const age = ageInput.value;
     console.log(name, km, age);
+
+    // Discount Access
+    if ((age !== 'under18') && (age !== 'over65')) {
+        discount = 0;
+        console.log("Non hai diritto allo sconto");
+
+    } else if (age === 'under18') {
+        discount = 20;
+        console.log("Sei ggggiovane, hai uno sconto del " + discount + "%!");
+
+    } else {
+        discount = 40;
+        console.log("Sei vecio!, hai uno sconto del " + discount + "%!");
+    }
+    console.log(discount);
 })
+
