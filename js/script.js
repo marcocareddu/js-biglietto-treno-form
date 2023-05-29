@@ -115,4 +115,7 @@ eraseButton.addEventListener('click', function () {
     nameInput.value = '';
     kmAmount.value = '';
     ageInput.value = 'empty';
+
+    // Remove Ticket
+    ticketSection.classList.add('d-none');
 })
