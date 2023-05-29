@@ -4,17 +4,17 @@ console.log('JS OK')
 
 // Link to elements
 const nameInput = document.getElementById('name');
-const km_amount = document.getElementById('km');
+const kmAmount = document.getElementById('km');
 const calcButton = document.getElementById('calc-btn');
 const eraseButton = document.getElementById('erase-btn');
 const ageInput = document.getElementById('age-select');
 // Bonus
-const km_display = document.getElementById('km-display');
-const age_display = document.getElementById('age-display');
-const discount_perc = document.getElementById('discount-perc');
-const discount_display = document.getElementById('discount-display');
-const ticket_display = document.getElementById('ticket-display');
-const ticket_gross = document.getElementById('ticket-gross');
+const kmDisplay = document.getElementById('km-display');
+const ageDisplay = document.getElementById('age-display');
+const discountPerc = document.getElementById('discount-perc');
+const discountDisplay = document.getElementById('discount-display');
+const ticketDisplay = document.getElementById('ticket-display');
+const ticketGross = document.getElementById('ticket-gross');
 const carriageDisplay = document.getElementById('carriage-display');
 const ticketNumber = document.getElementById('ticket-num-display');
 
@@ -29,7 +29,7 @@ console.log(discount, costXkm);
 // User Input
 calcButton.addEventListener('click', function () {
     const name = nameInput.value.trim();
-    const km = km_amount.value;
+    const km = kmAmount.value;
     const age = ageInput.value;
     console.log(name, km, age);
 
@@ -96,12 +96,12 @@ calcButton.addEventListener('click', function () {
 
 
         // Display results in DOM
-        km_display.innerText = km;
-        age_display.innerText = age;
-        discount_perc.innerText = discount;
-        ticket_gross.innerText = ticket.toFixed(2);
-        discount_display.innerText = (ticket - ticketNet).toFixed(2);
-        ticket_display.innerText = ticketNet.toFixed(2);
+        kmDisplay.innerText = km;
+        ageDisplay.innerText = age;
+        discountPerc.innerText = discount;
+        ticketGross.innerText = ticket.toFixed(2);
+        discountDisplay.innerText = (ticket - ticketNet).toFixed(2);
+        ticketDisplay.innerText = ticketNet.toFixed(2);
         carriageDisplay.innerText = carriageAssign;
         ticketNumber.innerText = ticketNumAssign;
     }
