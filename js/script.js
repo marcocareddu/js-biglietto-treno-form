@@ -47,11 +47,11 @@ calcButton.addEventListener('click', function () {
     if (isValid) {
 
         // Discount Access
-        if ((age !== 'under18') && (age !== 'over65')) {
+        if ((age !== 'Minorenne') && (age !== 'Senior')) {
             discount = 0;
             console.log("Mi spiace " + name + ", non hai diritto allo sconto");
 
-        } else if (age === 'under18') {
+        } else if (age === 'Minorenne') {
             discount = 20;
             console.log("Congratulazioni " + name + "! Sei giovane, hai uno sconto del " + discount + "%!");
 
