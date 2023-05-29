@@ -90,15 +90,16 @@ calcButton.addEventListener('click', function () {
         const carriageMax = 6;
 
         const carriageAssign = Math.floor(random * carriageMax) + 1;
-
         const ticketNumAssign = Math.floor(random * (ticketNumMax - ticketNumMin) + ticketNumMin);
 
+
         // Display results in DOM
-        kmDisplay.innerText = km;
+        // kmDisplay.innerText = km;
+        // discountPerc.innerText = discount;
+        // ticketGross.innerText = ticket.toFixed(2);
+        // discountDisplay.innerText = (ticket - ticketNet).toFixed(2);
+
         ageDisplay.innerText = age;
-        discountPerc.innerText = discount;
-        ticketGross.innerText = ticket.toFixed(2);
-        discountDisplay.innerText = (ticket - ticketNet).toFixed(2);
         ticketDisplay.innerText = ticketNet.toFixed(2);
         carriageDisplay.innerText = carriageAssign;
         ticketNumber.innerText = ticketNumAssign;
