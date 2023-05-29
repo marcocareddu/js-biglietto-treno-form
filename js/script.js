@@ -37,6 +37,7 @@ calcButton.addEventListener('click', function () {
         discount = 40;
         console.log("Sei vecio!, hai uno sconto del " + discount + "%!");
     }
+
     console.log(discount);
 
     // Declare Ticket & Ticket_net
@@ -45,5 +46,18 @@ calcButton.addEventListener('click', function () {
 
     let ticketNet;
 
+    // Ticket discounted calc
+    if (discount === 0) {
+        console.log("Il prezzo del biglietto è di €" + ticket.toFixed(2));
+        ticketNet = ticket;
+
+    } else if (discount === 20) {
+        ticketNet = ticket - ((ticket * discount) / 100);
+        console.log("Il prezzo del biglietto è di €" + ticketNet.toFixed(2));
+
+    } else {
+        ticketNet = ticket - ((ticket * discount) / 100);
+        console.log("Il prezzo del biglietto è di €" + ticketNet.toFixed(2));
+    }
 })
 
