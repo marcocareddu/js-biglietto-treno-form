@@ -18,6 +18,7 @@ const ticketGross = document.getElementById('ticket-gross');
 const carriageDisplay = document.getElementById('carriage-display');
 const ticketNumber = document.getElementById('ticket-num-display');
 const passengerName = document.getElementById('passenger-name');
+const ticketSection = document.getElementById('ticket-block');
 
 // Declare calc variables
 let discount;
@@ -34,10 +35,13 @@ calcButton.addEventListener('click', function () {
     const age = ageInput.value;
     console.log(name, km, age);
 
+    // Display ticket
+    ticketSection.classList.remove('d-none');
+
     // !Validation
     let isValid = true;
 
-    if ((km < 1 || km === false) || (age === 'empty') || (name === '')) {
+    if ((name === '') || (km < 1 || km === false) || (age === 'empty')) {
         isValid = false;
         console.log(name, km, age);
         console.log("Non stai inserendo un valore corretto!");
@@ -92,13 +96,12 @@ calcButton.addEventListener('click', function () {
         const carriageAssign = Math.floor(random * carriageMax) + 1;
         const ticketNumAssign = Math.floor(random * (ticketNumMax - ticketNumMin) + ticketNumMin);
 
-
         // Display results in DOM
+
         // kmDisplay.innerText = km;
         // discountPerc.innerText = discount;
         // ticketGross.innerText = ticket.toFixed(2);
         // discountDisplay.innerText = (ticket - ticketNet).toFixed(2);
-
         ageDisplay.innerText = age;
         ticketDisplay.innerText = ticketNet.toFixed(2);
         carriageDisplay.innerText = carriageAssign;
