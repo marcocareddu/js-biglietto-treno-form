@@ -13,35 +13,67 @@
 </head>
 
 <body>
-    <label for="name">Inserisci il tuo nome</label>
-    <input type="text" id="name">
+    <!-- Main -->
+    <main>
+        <div class="container">
 
-    <label for="km">Quanti km vuoi percorrere?</label>
-    <input type="number" id="km">
+            <!-- Input Section -->
+            <section class="Input Section">
+                <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+                <div class="card">
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="name">Nome e Cognome</label>
+                            <br>
+                            <input type="text" id="name">
+                        </div>
+                        <div class="col-3">
+                            <label for="km">Km da percorrere?</label>
+                            <br>
+                            <input type="number" id="km">
+                        </div>
+                        <div class="col-3">
+                            <label for="age-select">Fascia d'età</label>
+                            <br>
+                            <select name="age" id="age-select">
+                                <option value="empty">Seleziona l'età</option>
+                                <option value="Minorenne">Minorenne</option>
+                                <option value="Adulto">Maggiorenne</option>
+                                <option value="Senior">Anziano</option>
+                            </select>
+                        </div>
+                    </div>
 
-    <select name="age" id="age-select">
-        <option value="empty">Seleziona l'età</option>
-        <option value="Minorenne">Minorenne</option>
-        <option value="Adulto">Maggiorenne</option>
-        <option value="Senior">Anziano</option>
-    </select>
+                    <!-- Button -->
+                    <div>
+                        <button id="calc-btn">Calcola</button>
+                        <button id="erase-btn">Cancella</button>
+                    </div>
+                </div>
+            </section>
+            <section class="ticket-section">
+                <h1>IL TUO BIGLIETTO</h1>
+                <div class="ticket">
+                    <h2>DETTAGLIO PASSEGGERI</h2>
+                    <div class="passenger">
+                        <h2>NOME PASSEGGERO</h2>
+                        <h3 id="passenger-name"></h3>
+                    </div>
+                </div>
 
-    <div>
-        <button id="calc-btn">Calcola</button>
-        <button id="erase-btn">Cancella</button>
-    </div>
 
-    <div>
-        <p>Vuoi percorrere <span id="km-display"></span> km</p>
-        <p>Sei in classe <span id="age-display"></span></p>
-        <p>quindi hai uno sconto del <span id="discount-perc"></span>%</p>
-        <p>che equivale ad €<span id="discount-display"></span> sul
-            biglietto da €
-            <span id="ticket-gross"></span>
-        <p>Il costo totale del biglietto è di €<span id="ticket-display"></span>
-        <p>Il numero della carrozza è <span id="carriage-display"></span>
-        <p>Il numero del tuo biglietto è <span id="ticket-num-display"></span>
-    </div>
+            </section>
+            <p>Vuoi percorrere <span id="km-display"></span> km</p>
+            <p>Sei in classe <span id="age-display"></span></p>
+            <p>quindi hai uno sconto del <span id="discount-perc"></span>%</p>
+            <p>che equivale ad €<span id="discount-display"></span> sul
+                biglietto da €
+                <span id="ticket-gross"></span>
+            <p>Il costo totale del biglietto è di €<span id="ticket-display"></span>
+            <p>Il numero della carrozza è <span id="carriage-display"></span>
+            <p>Il numero del tuo biglietto è <span id="ticket-num-display"></span>
+        </div>
+    </main>
 
     <!-- Script -->
     <script src="./js/script.js"></script>
