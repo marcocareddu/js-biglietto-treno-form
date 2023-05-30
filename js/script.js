@@ -31,7 +31,7 @@ console.log(discount, costXkm);
 // User Input
 calcButton.addEventListener('click', function () {
     const name = nameInput.value.trim();
-    const km = kmAmount.value;
+    const km = parseInt(kmAmount.value);
     const age = ageInput.value;
     console.log(name, km, age);
 
@@ -85,20 +85,14 @@ calcButton.addEventListener('click', function () {
         }
 
         // Random calc for ticket ID & train carriage
-        const random = Math.random();
         const ticketNumMin = 20000;
-        const ticketNumMax = 50000;
+        const ticketNumMax = 90000;
         const carriageMax = 6;
 
-        const carriageAssign = Math.floor(random * carriageMax) + 1;
-        const ticketNumAssign = Math.floor(random * (ticketNumMax - ticketNumMin) + ticketNumMin);
+        const carriageAssign = Math.floor(Math.random() * carriageMax) + 1;
+        const ticketNumAssign = Math.floor(Math.random() * (ticketNumMax - ticketNumMin) + ticketNumMin);
 
         // Display results in DOM
-
-        // kmDisplay.innerText = km;
-        // discountPerc.innerText = discount;
-        // ticketGross.innerText = ticket.toFixed(2);
-        // discountDisplay.innerText = (ticket - ticketNet).toFixed(2);
         ageDisplay.innerText = age;
         ticketDisplay.innerText = ticketNet.toFixed(2);
         carriageDisplay.innerText = carriageAssign;
