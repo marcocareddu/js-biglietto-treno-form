@@ -24,10 +24,7 @@ const ticketSection = document.getElementById('ticket-block');
 let discount;
 const costXkm = 0.21;
 
-console.log(discount, costXkm);
-
 // # PHASE 2
-
 // User Input
 calcButton.addEventListener('click', function () {
     const name = nameInput.value.trim();
@@ -38,7 +35,7 @@ calcButton.addEventListener('click', function () {
     // !Validation
     let isValid = true;
 
-    if ((name === '') || (km < 1 || km === false) || (age === 'empty')) {
+    if ((name === '') || (km < 1 || !km) || (age === 'empty')) {
         isValid = false;
         console.log(name, km, age);
         console.log("Non stai inserendo un valore corretto!");
@@ -62,8 +59,6 @@ calcButton.addEventListener('click', function () {
             console.log("Congratulazioni " + name + "! Sei vecio!, hai uno sconto del " + discount + "%!");
         }
 
-        console.log(discount);
-
         // Declare Ticket & Ticket_net
         let ticket = (km * costXkm);
         console.log(ticket.toFixed(2));
@@ -72,16 +67,11 @@ calcButton.addEventListener('click', function () {
 
         // Ticket discounted calc
         if (discount === 0) {
-            console.log("Il prezzo del biglietto è di €" + ticket.toFixed(2));
             ticketNet = ticket;
-
         } else if (discount === 20) {
             ticketNet = ticket - ((ticket * discount) / 100);
-            console.log("Il prezzo del biglietto è di €" + ticketNet.toFixed(2));
-
         } else {
             ticketNet = ticket - ((ticket * discount) / 100);
-            console.log("Il prezzo del biglietto è di €" + ticketNet.toFixed(2));
         }
 
         // Random calc for ticket ID & train carriage
