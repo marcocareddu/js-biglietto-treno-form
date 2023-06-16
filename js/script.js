@@ -30,6 +30,8 @@ const app = createApp({
             this.age = 'empty';
             this.display = '';
         },
+
+        // Create ticket @ click
         createTicket() {
 
             // Validation
