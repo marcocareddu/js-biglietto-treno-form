@@ -1,105 +1,75 @@
-console.log('JS OK')
+// VUE JS
+console.log('Vue OK', Vue);
 
-// PHASE 1
+const { createApp } = Vue;
 
-// Link to elements
-const nameInput = document.getElementById('name');
-const kmAmount = document.getElementById('km');
-const calcButton = document.getElementById('calc-btn');
-const eraseButton = document.getElementById('erase-btn');
-const ageInput = document.getElementById('age-select');
-// Bonus
-const kmDisplay = document.getElementById('km-display');
-const ageDisplay = document.getElementById('age-display');
-const discountPerc = document.getElementById('discount-perc');
-const discountDisplay = document.getElementById('discount-display');
-const ticketDisplay = document.getElementById('ticket-display');
-const ticketGross = document.getElementById('ticket-gross');
-const carriageDisplay = document.getElementById('carriage-display');
-const ticketNumber = document.getElementById('ticket-num-display');
-const passengerName = document.getElementById('passenger-name');
-const ticketSection = document.getElementById('ticket-block');
-
-// Declare calc variables
-let discount;
-const costXkm = 0.21;
-
-// # PHASE 2
-// User Input
-calcButton.addEventListener('click', function () {
-    const name = nameInput.value.trim();
-    const km = parseInt(kmAmount.value);
-    const age = ageInput.value;
-    console.log(name, km, age);
-
-    // !Validation
-    let isValid = true;
-
-    if ((name === '') || (km < 1 || !km) || (age === 'empty')) {
-        isValid = false;
-        console.log(name, km, age);
-        console.log("Non stai inserendo un valore corretto!");
-        alert("Controlla di aver inserito i dati richiesti!");
-    }
-    console.log(isValid);
-
-    if (isValid) {
-
-        // Discount Access
-        if ((age !== 'Minorenne') && (age !== 'Senior')) {
-            discount = 0;
-            console.log("Mi spiace " + name + ", non hai diritto allo sconto");
-
-        } else if (age === 'Minorenne') {
-            discount = 20;
-            console.log("Congratulazioni " + name + "! Sei giovane, hai uno sconto del " + discount + "%!");
-
-        } else {
-            discount = 40;
-            console.log("Congratulazioni " + name + "! Sei vecio!, hai uno sconto del " + discount + "%!");
+const app = createApp({
+    data() {
+        return {
+            nome: '',
+            km: 0,
+            age: 'empty',
+            discount: 0,
+            ticketNumMin: 20000,
+            ticketNumMax: 90000,
+            carriageMax: 6,
+            isValid: true,
+            costXkm: 0.21,
+            carriageAssign: 0,
+            ticketNumAssign: 0,
+            ticket: 0,
+            ticketNet: 0,
+            display: 'd-none'
         }
+    },
+    methods: {
+        // Erasa button
+        eraseField() {
+            this.nome = '';
+            this.km = '';
+            this.age = 'empty';
+            this.display = '';
+        },
+        createTicket() {
 
-        // Declare Ticket & Ticket_net
-        let ticket = (km * costXkm);
-        console.log(ticket.toFixed(2));
+            // Validation
+            if ((this.name === '') || (this.km < 1 || !this.km) || (this.age === 'empty')) {
+                this.isValid = false;
+                alert("Controlla di aver inserito i dati richiesti!");
+            }
 
-        let ticketNet;
+            // Start Program
+            if (this.isValid) {
 
-        // Ticket discounted calc
-        if (discount === 0) {
-            ticketNet = ticket;
-        } else if (discount === 20) {
-            ticketNet = ticket - ((ticket * discount) / 100);
-        } else {
-            ticketNet = ticket - ((ticket * discount) / 100);
+                // Declare Ticket & Ticket_net
+                this.ticket = (this.km * this.costXkm);
+
+                // Discount Access
+                if ((this.age !== 'Minorenne') && (this.age !== 'Senior')) {
+                    this.discount = 0;
+                } else if (this.age === 'Minorenne') {
+                    this.discount = 20;
+                } else {
+                    this.discount = 40;
+                }
+
+                // Calc Discount
+                if (this.discount === 0) {
+                    this.ticketNet = this.ticket;
+                } else if (this.discount === 20) {
+                    this.ticketNet = this.ticket - ((this.ticket * this.discount) / 100);
+                } else {
+                    this.ticketNet = this.ticket - ((this.ticket * this.discount) / 100);
+                }
+
+                // Crate Random ticket & Display
+                this.carriageAssign = Math.floor(Math.random() * this.carriageMax) + 1;
+                this.ticketNumAssign = Math.floor(Math.random() * (this.ticketNumMax - this.ticketNumMin) + this.ticketNumMin);
+                this.display = '';
+            }
         }
-
-        // Random calc for ticket ID & train carriage
-        const ticketNumMin = 20000;
-        const ticketNumMax = 90000;
-        const carriageMax = 6;
-
-        const carriageAssign = Math.floor(Math.random() * carriageMax) + 1;
-        const ticketNumAssign = Math.floor(Math.random() * (ticketNumMax - ticketNumMin) + ticketNumMin);
-
-        // Display results in DOM
-        ageDisplay.innerText = age;
-        ticketDisplay.innerText = ticketNet.toFixed(2);
-        carriageDisplay.innerText = carriageAssign;
-        ticketNumber.innerText = ticketNumAssign;
-        passengerName.innerText = name;
-
-        // Display ticket
-        ticketSection.classList.remove('d-none');
     }
-})
+});
 
-// Erase Button
-eraseButton.addEventListener('click', function () {
-    nameInput.value = '';
-    kmAmount.value = '';
-    ageInput.value = 'empty';
-
-    // Remove Ticket
-    ticketSection.classList.add('d-none');
-})
+// mount
+app.mount('#root');
